@@ -17,7 +17,7 @@ def print_result():
     string = ""
     for y in range(len(tokens)):
         string += tokens[y]
-    print(eval(string))
+    print(str(eval(string)))
     tokens.clear()
 
 while True:
