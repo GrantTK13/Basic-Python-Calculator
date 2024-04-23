@@ -1,38 +1,25 @@
-import time
+tokens = []
+special_chars = [" ", "+", "-", "*", "/", "(", ")"]
 
-print(" ")
+def tokenize(string_to_tokenize):
+    current_token = ""
+    for x in range(len(string_to_tokenize)):
+        if special_chars.__contains__(string_to_tokenize[x]):
+            tokens.append(current_token)
+            tokens.append(string_to_tokenize[x])
+            current_token = ""
+        else:
+            current_token += string_to_tokenize[x]
+    tokens.append(current_token)
+    print_result()
 
-print("What is your first number?")
+def print_result():
+    string = ""
+    for y in range(len(tokens)):
+        string += tokens[y]
+    print(eval(string))
+    tokens.clear()
 
-num1 = int(input())
-
-print(" ")
-
-print("What is your operation? (Use operation symbol!)")
-
-operation = input()
-
-print(" ")
-
-print("What is your second number?")
-
-num2 = int(input())
-
-print(" ")
-
-if operation == "+":
-  print("The answer is:")
-  print(num1 + num2)
-elif operation == "-":
-  print("The answer is:")
-  print(num1 - num2)
-elif operation == "*":
-  print("The answer is:")
-  print(num1 * num2)
-elif operation == "/":
-  print("The answer is:")
-  print(num1 / num2)
-else:
-  print("Sorry, but that operation doesn't exist!")
-
-time.sleep(5)
+while True:
+    equation = input("Calc > ")
+    tokenize(equation)
