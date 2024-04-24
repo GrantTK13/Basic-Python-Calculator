@@ -1,3 +1,5 @@
+import time
+
 tokens = []
 special_chars = [" ", "+", "-", "*", "/", "(", ")"]
 
@@ -22,4 +24,8 @@ def print_result():
 
 while True:
     equation = input("Enter an equation: ")
+    print()
+    print("The answer is: ")
+    time.sleep(0.5)
     tokenize(equation)
+    print()
