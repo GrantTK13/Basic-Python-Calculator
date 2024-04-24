@@ -23,6 +23,7 @@ def print_result():
     tokens.clear()
 
 while True:
+    time.sleep(0.5)
     equation = input("Enter an equation: ")
     print()
     print("The answer is: ")
