@@ -21,5 +21,5 @@ def print_result():
     tokens.clear()
 
 while True:
-    equation = input("Calc > ")
+    equation = input("Enter an equation: ")
     tokenize(equation)
